@@ -6,7 +6,7 @@
   import CardList from "./components/CardList.vue"
   //import Drawer from  "./components/Drawer.vue"
   const selectedFilter = ref('Default')
-  const seachFilter = ref('')
+  const searchFilter = ref('')
   const items = ref([])
   onMounted(async () => {
     try {
@@ -22,7 +22,6 @@
 <template>
   <div class="bg-white w-4/5 m-auto mt-14 rounded-xl shadow-xl">
     <Header/>
-    {{seachFilter}}
     <div class="p-10">
       <div class="flex justify-between items-center">
         <h2 class="text-3xl font-bold mb-8">Все кроссовки</h2>
@@ -33,12 +32,12 @@
             <option value="Descending">По цене (Убывание)</option>
           </select>
           <label class="relative">
-            <img src="/search.svg" alt="seach" class="absolute left-4 top-3 opacity-10 hover:opacity-40 cursor-pointer">
-            <input class="border rounded-md py-2 pl-11 pr-4 outline-none focus:border-gray-400 " placeholder="Поиск..." v-model="seachFilter">
+            <img src="/search.svg" alt="search" class="absolute left-4 top-3 opacity-10 hover:opacity-40 cursor-pointer">
+            <input class="border rounded-md py-2 pl-11 pr-4 outline-none focus:border-gray-400 " placeholder="Поиск..." v-model="searchFilter">
           </label>
         </div>
       </div>
-      <CardList :items="items" :filter="selectedFilter" />
+      <CardList :items="items" :filter="selectedFilter" :search="searchFilter"/>
 <!--      <Drawer/>-->
     </div>
   </div>

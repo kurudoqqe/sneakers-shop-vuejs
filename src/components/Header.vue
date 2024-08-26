@@ -7,7 +7,7 @@
     <div class="flex items-center gap-4">
       <img src="/logo.png" alt="Logo" class="w-10 mr-5"/>
       <div>
-        <h2 class="text-xl font-bold uppercase">Lorem ipsum</h2>
+        <h2 class="text-xl font-bold uppercase">Sneakers Shop</h2>
         <p class="text-slate-500">Магазин кроссовок</p>
       </div>
     </div>

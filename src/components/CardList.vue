@@ -5,9 +5,17 @@
   const props = defineProps({
     items: Array,
     filter: String,
+    search: String,
   })
   const sortedItems = computed(() => {
-    let sortedItems = props.items.slice(0)
+    const sortedItems = props.items.slice(0).filter((item) => {
+      if (item.title.includes(props.search)) {
+        return item
+      }
+      else {
+        return false
+      }
+    })
     switch (props.filter) {
       case 'Default':
         return sortedItems
@@ -16,7 +24,9 @@
       case 'Descending':
         return sortedItems.sort((a, b) => b.price - a.price)
     }
+
   })
+
 </script>
 
 <template>
